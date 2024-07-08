@@ -21,8 +21,23 @@ const app = express();
 // })
 
 // I want THAT ONE
+const collectibles = [
+    { name: 'shiny ball', price: 5.95 },
+    { name: 'autographed picture of a dog', price: 10 },
+    { name: 'vintage 1970s yogurt SOLD AS-IS', price: 0.99 }
+  ];
 
 
+app.get ('/collectibles/:index', (req, res)=> {
+const index = parseInt (req.params.index, 10);
+if (index >=0 && index <collectibles.length){
+    const item= collectibles[index]
+    res.send(`So, you want the ${item.name}? For ${item.price} dollars, it can be yours! `)
+}
+else {
+    res.send ('This item is not yet in stock. Check back soon!')
+}
+})
 
 app.listen(3000,()=> {
     console.log (`server is running`)
