@@ -41,21 +41,27 @@ const app = express();
 
 
 // Filter Shoes by Query Parameters
-// const shoes = [
-//     { name: "Birkenstocks", price: 50, type: "sandal" },
-//     { name: "Air Jordans", price: 500, type: "sneaker" },
-//     { name: "Air Mahomeses", price: 501, type: "sneaker" },
-//     { name: "Utility Boots", price: 20, type: "boot" },
-//     { name: "Velcro Sandals", price: 15, type: "sandal" },
-//     { name: "Jet Boots", price: 1000, type: "boot" },
-//     { name: "Fifty-Inch Heels", price: 175, type: "heel" }
-// ];
+const shoes = [
+    { name: "Birkenstocks", price: 50, type: "sandal" },
+    { name: "Air Jordans", price: 500, type: "sneaker" },
+    { name: "Air Mahomeses", price: 501, type: "sneaker" },
+    { name: "Utility Boots", price: 20, type: "boot" },
+    { name: "Velcro Sandals", price: 15, type: "sandal" },
+    { name: "Jet Boots", price: 1000, type: "boot" },
+    { name: "Fifty-Inch Heels", price: 175, type: "heel" }
+];
 
+app.get('/shoes', (req, res) => {
+    const {'min-price': minPrice, 'max-price': maxPrice, type } = req.query;
 
-//need help on question 4- stuck on this one.
+let filteredShoes = shoes.filter (shoe =>
 
-app.listen(3000,()=> {
-    console.log (`server is running`)
+    
+)
+})
+
+app.listen(3000, () => {
+    console.log(`server is running`)
 })
 
 
